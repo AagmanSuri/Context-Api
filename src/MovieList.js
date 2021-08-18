@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Movie from "./Movie";
-function MovieList() {
+import { MovieContext } from "./MovieContext";
+
+const MovieList = () => {
+  const [movies, setMovies] = useContext(MovieContext);
   return (
     <div>
-      {/* {movies.map((movie) => {
+      {movies.map((movie) => {
         return (
           <Movie
             key={movie.id}
@@ -12,9 +15,9 @@ function MovieList() {
             id={movie.id}
           />
         );
-      })} */}
+      })}
     </div>
   );
-}
+};
 
 export default MovieList;
